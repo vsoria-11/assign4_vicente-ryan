@@ -28,7 +28,7 @@ with tabs[2]:
 
 # Tab 4: Display Current Time
 with tabs[3]:
-    st.subheader(f"Current Time")
+    st.subheader("Current Time")
     from datetime import datetime
 
     # Get current date and time
@@ -36,4 +36,6 @@ with tabs[3]:
 
     # Format to just show time (Hours:Minutes:Seconds)
     current_time = now.strftime("%H:%M:%S")
-    print("Current Time:", current_time)
+    
+    # Display the time in the Streamlit app
+    st.write("Current Time:", current_time)
