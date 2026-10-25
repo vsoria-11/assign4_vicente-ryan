@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # Print Title for the App
-st.title("Microsoft Stock Data Dashboard by Peter Wysocki")
+st.title("Microsoft Stock Data Dashboard by Vicente Soria & Ryan Kim")
 
 # Read CSV file with stock data (CSV file must be in 'main' folder for your assignment 4 repository) 
 df = pd.read_csv("msft.csv")
@@ -25,3 +25,15 @@ with tabs[1]:
 with tabs[2]:
     st.subheader(f"Volume for MSFT")
     st.bar_chart(df['Volume'])
+
+# Tab 4: Display Current Time
+with tabs[3]:
+    st.subheader(f"Current Time")
+    from datetime import datetime
+
+    # Get current date and time
+    now = datetime.now()
+
+    # Format to just show time (Hours:Minutes:Seconds)
+    current_time = now.strftime("%H:%M:%S")
+    print("Current Time:", current_time)
